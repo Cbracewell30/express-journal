@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const notes = require("../db/db.json");
+let notes = require("../db/db.json");
 const fs = require ("fs");
 const { request } = require("http");
 
@@ -33,10 +33,8 @@ router.post("/api/notes", (req, res) => {
 // deleting note
 router.delete("/api/notes/:id", (req, res) => {
   var oldNotes = notes.filter(note => note.id != req.params.id)
-  notes = oldNotes
-  
-    // pushing the new info in the data
-    notes.push(newNote)
+  notes = oldNotes;
+
     fs.writeFileSync("./db/db.json", JSON.stringify(notes), function (err){
         if(err){
            throw err 
@@ -44,6 +42,6 @@ router.delete("/api/notes/:id", (req, res) => {
     })
 
     console.log("deleteroute", notes)
-    res.JSON(notes);
+    res.json(notes);
 });
   module.exports = router;
