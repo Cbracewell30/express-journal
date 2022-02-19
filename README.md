@@ -36,7 +36,7 @@ Langues used in this project include JavaScript,HTML,CSS,ES6,Node, Express
                                  ##Questions
 #### Github & Heroku
 [Check out my github](https://github.com/Cbracewell30/express-journal)
-[Check out my heroku] (https://dashboard.heroku.com/apps/afternoon-fortress-30590
+[Check out my heroku] (https://afternoon-fortress-30590.herokuapp.com/)
 
 #### Email
 Feel free to reach me at Chrisbracewell35@gmail.com for any questions regarding this project.
