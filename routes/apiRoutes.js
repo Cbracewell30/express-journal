@@ -25,9 +25,25 @@ router.post("/api/notes", (req, res) => {
            throw err 
         }
     })
-    
+
     console.log("postroute", notes)
     res.JSON(notes);
+});
 
+// deleting note
+router.delete("/api/notes/:id", (req, res) => {
+  var oldNotes = notes.filter(note => note.id != req.params.id)
+  notes = oldNotes
+  
+    // pushing the new info in the data
+    notes.push(newNote)
+    fs.writeFileSync("./db/db.json", JSON.stringify(notes), function (err){
+        if(err){
+           throw err 
+        }
+    })
+
+    console.log("deleteroute", notes)
+    res.JSON(notes);
 });
   module.exports = router;
